@@ -185,6 +185,11 @@
             <font color="061E61"><a href="https://MDDM.github.io/">Nan Xu</a><sup> &#x1F4EE;,1</sup>  
             </font>
           </b></p>
+        <p style="line-height:1" align="center"><b>
+              <font color="061E61">
+                Zhaolong Huang</a>
+              </font>
+            </b></p>
         <p style="line-height:1" align="center">
           <font color="061E61"><sup>&#x1F4EE;</sup>Corresponding author</font>
         </p>
@@ -205,6 +210,19 @@
               public dataset and a real-world dataset validate the effectiveness of the proposed method, either on subjective or objective metric.
           </p>
           <br></br>
+            <figure>
+              <p align="center"><img src="f11.png" width="80%" class="center" /></p>
+              <figcaption>
+                <p style="text-align: justify;">
+                  <font color="061E61"><b>Figure 1:</b> The overall architecture of MDDM, multi-view discriminative network and encoder layer. In subfigure (a), 
+                    $ S_n $ and $ T_n $ are noisy signals in frequency and time domains, respectively. Two D-* are encoder and decoder of discriminative network 
+                    and output spectrogram is $ S_p $.  $ S_t $ is the sampled spectrogram at time-step $ t $. The intermediate multi-view feature $ C_m $ and 
+                    output $ S_p $ are the conditions of diffusion model. In subfigure (b), S-* and T-* means frequency and time domains, respectively. 
+                    NPM is the noise perception module and $ \oslash $ means the modulation mode. Note that the skip connections are not drawn. In subfigure (c), 
+                    the encoder module is shown. GELU is Gaussian Error Linear Unit and GN denotes GroupNorm. The dilation rates are 1 and 2, respectively.
+                </p>
+              </figcaption>
+            </figure>
           
           <h2 id="section_3">
             <font color="000093">Demos for Models</font>
@@ -549,356 +567,6 @@
                       </audio></td>
                   <td><audio controls="controls">
                           <source src="singing/hifigan/H/od_3.wav" autoplay />Your browser does not support the audio
-                          element.
-                      </audio></td>
-              </tr>
-              </tbody>
-            </table>
-          </div>  
-
-          <br></br>
-          <h2 id="section_4">
-            <font color="000093">Demos for iSTFTNET</font>
-          </h2>
-          <p>
-            <font color="061E61">✅ speech demos.
-            </font>
-          </p>
-
-          <div class="table-container">
-            <table class="table" align="center" style="table-layout: fixed;word-break:break-word">
-              <thead>
-                <tr>
-                  <th scope="col" width="90px" style="background-color: #ADD8E6;">
-                    <font color="061E61">Type</font>
-                  </th>
-                  <th scope="col" width="325px" style="background-color: #ADD8E6;">
-                    <font color="061E61">Ground Truth</font>
-                  </th>
-                  <th scope="col" width="325px" style="background-color: #ADD8E6;">
-                    <font color="061E61">iSTFTNET</font>
-                  </th>
-                  <th scope="col" width="325px" style="background-color: #ADD8E6;">
-                    <font color="061E61">+S</font>
-                  </th>
-                  <th scope="col" width="325px" style="background-color: #ADD8E6;">
-                    <font color="061E61">+C</font>
-                  </th>
-                  <th scope="col" width="325px" style="background-color: #ADD8E6;">
-                    <font color="061E61">+H</font>
-                  </th>         
-                </tr>
-              </thead>
-  
-              <tbody>
-                <tr>
-                  <td>ID</td>
-                  <td><audio controls="controls">
-                          <source src="speech/istftnet/groundtruth/id_1.wav" autoplay />Your browser does not support the audio
-                          element.
-                      </audio></td>
-                  <td><audio controls="controls">
-                          <source src="speech/istftnet/base/id_1.wav" autoplay />Your browser does not support the audio
-                          element.
-                      </audio></td>
-                  <td><audio controls="controls">
-                          <source src="speech/istftnet/S/id_1.wav" autoplay />Your browser does not support the audio
-                          element.
-                      </audio></td>
-                  <td><audio controls="controls">
-                          <source src="speech/istftnet/C/id_1.wav" autoplay />Your browser does not support the audio
-                          element.
-                      </audio></td>
-                  <td><audio controls="controls">
-                          <source src="speech/istftnet/H/id_1.wav" autoplay />Your browser does not support the audio
-                          element.
-                      </audio></td>
-              </tr>
-              <tr>
-                  <td>ID</td>
-                  <td><audio controls="controls">
-                          <source src="speech/istftnet/groundtruth/id_2.wav" autoplay />Your browser does not support the audio
-                          element.
-                      </audio></td>
-                  <td><audio controls="controls">
-                          <source src="speech/istftnet/base/id_2.wav" autoplay />Your browser does not support the audio
-                          element.
-                      </audio></td>
-                  <td><audio controls="controls">
-                          <source src="speech/istftnet/S/id_2.wav" autoplay />Your browser does not support the audio
-                          element.
-                      </audio></td>
-                  <td><audio controls="controls">
-                          <source src="speech/istftnet/C/id_2.wav" autoplay />Your browser does not support the audio
-                          element.
-                      </audio></td>
-                  <td><audio controls="controls">
-                          <source src="speech/istftnet/H/id_2.wav" autoplay />Your browser does not support the audio
-                          element.
-                      </audio></td>
-              </tr>
-              <tr>
-                  <td>ID</td>
-                  <td><audio controls="controls">
-                          <source src="speech/istftnet/groundtruth/id_3.wav" autoplay />Your browser does not support the audio
-                          element.
-                      </audio></td>
-                  <td><audio controls="controls">
-                          <source src="speech/istftnet/base/id_3.wav" autoplay />Your browser does not support the audio
-                          element.
-                      </audio></td>
-                  <td><audio controls="controls">
-                          <source src="speech/istftnet/S/id_3.wav" autoplay />Your browser does not support the audio
-                          element.
-                      </audio></td>
-                  <td><audio controls="controls">
-                          <source src="speech/istftnet/C/id_3.wav" autoplay />Your browser does not support the audio
-                          element.
-                      </audio></td>
-                  <td><audio controls="controls">
-                          <source src="speech/istftnet/H/id_3.wav" autoplay />Your browser does not support the audio
-                          element.
-                      </audio></td>
-              </tr>
-              <tr>
-                  <td>OD</td>
-                  <td><audio controls="controls">
-                          <source src="speech/istftnet/groundtruth/od_1.wav" autoplay />Your browser does not support the audio
-                          element.
-                      </audio></td>
-                  <td><audio controls="controls">
-                          <source src="speech/istftnet/base/od_1.wav" autoplay />Your browser does not support the audio
-                          element.
-                      </audio></td>
-                  <td><audio controls="controls">
-                          <source src="speech/istftnet/S/od_1.wav" autoplay />Your browser does not support the audio
-                          element.
-                      </audio></td>
-                  <td><audio controls="controls">
-                          <source src="speech/istftnet/C/od_1.wav" autoplay />Your browser does not support the audio
-                          element.
-                      </audio></td>
-                  <td><audio controls="controls">
-                          <source src="speech/istftnet/H/od_1.wav" autoplay />Your browser does not support the audio
-                          element.
-                      </audio></td>
-              </tr>
-              <tr>
-                  <td>OD</td>
-                  <td><audio controls="controls">
-                          <source src="speech/istftnet/groundtruth/od_2.wav" autoplay />Your browser does not support the audio
-                          element.
-                      </audio></td>
-                  <td><audio controls="controls">
-                          <source src="speech/istftnet/base/od_2.wav" autoplay />Your browser does not support the audio
-                          element.
-                      </audio></td>
-                  <td><audio controls="controls">
-                          <source src="speech/istftnet/S/od_2.wav" autoplay />Your browser does not support the audio
-                          element.
-                      </audio></td>
-                  <td><audio controls="controls">
-                          <source src="speech/istftnet/C/od_2.wav" autoplay />Your browser does not support the audio
-                          element.
-                      </audio></td>
-                  <td><audio controls="controls">
-                          <source src="speech/istftnet/H/od_2.wav" autoplay />Your browser does not support the audio
-                          element.
-                      </audio></td>
-              </tr>
-              <tr>
-                  <td>OD</td>
-                  <td><audio controls="controls">
-                          <source src="speech/istftnet/groundtruth/od_3.wav" autoplay />Your browser does not support the audio
-                          element.
-                      </audio></td>
-                  <td><audio controls="controls">
-                          <source src="speech/istftnet/base/od_3.wav" autoplay />Your browser does not support the audio
-                          element.
-                      </audio></td>
-                  <td><audio controls="controls">
-                          <source src="speech/istftnet/S/od_3.wav" autoplay />Your browser does not support the audio
-                          element.
-                      </audio></td>
-                  <td><audio controls="controls">
-                          <source src="speech/istftnet/C/od_3.wav" autoplay />Your browser does not support the audio
-                          element.
-                      </audio></td>
-                  <td><audio controls="controls">
-                          <source src="speech/istftnet/H/od_3.wav" autoplay />Your browser does not support the audio
-                          element.
-                      </audio></td>
-              </tr>
-              </tbody>
-            </table>
-          </div>
-
-          <p>
-            <font color="061E61">✅ singing demos.
-            </font>
-          </p>
-
-          <div class="table-container">
-            <table class="table" align="center" style="table-layout: fixed;word-break:break-word">
-              <thead>
-                <tr>
-                  <th scope="col" width="90px" style="background-color: #ADD8E6;">
-                    <font color="061E61">Type</font>
-                  </th>
-                  <th scope="col" width="325px" style="background-color: #ADD8E6;">
-                    <font color="061E61">Ground Truth</font>
-                  </th>
-                  <th scope="col" width="325px" style="background-color: #ADD8E6;">
-                    <font color="061E61">iSTFTNET</font>
-                  </th>
-                  <th scope="col" width="325px" style="background-color: #ADD8E6;">
-                    <font color="061E61">+S</font>
-                  </th>
-                  <th scope="col" width="325px" style="background-color: #ADD8E6;">
-                    <font color="061E61">+C</font>
-                  </th>
-                  <th scope="col" width="325px" style="background-color: #ADD8E6;">
-                    <font color="061E61">+H</font>
-                  </th>         
-                </tr>
-              </thead>
-  
-              <tbody>
-                <tr>
-                  <td>ID</td>
-                  <td><audio controls="controls">
-                          <source src="singing/istftnet/groundtruth/id_1.wav" autoplay />Your browser does not support the audio
-                          element.
-                      </audio></td>
-                  <td><audio controls="controls">
-                          <source src="singing/istftnet/base/id_1.wav" autoplay />Your browser does not support the audio
-                          element.
-                      </audio></td>
-                  <td><audio controls="controls">
-                          <source src="singing/istftnet/S/id_1.wav" autoplay />Your browser does not support the audio
-                          element.
-                      </audio></td>
-                  <td><audio controls="controls">
-                          <source src="singing/istftnet/C/id_1.wav" autoplay />Your browser does not support the audio
-                          element.
-                      </audio></td>
-                  <td><audio controls="controls">
-                          <source src="singing/istftnet/H/id_1.wav" autoplay />Your browser does not support the audio
-                          element.
-                      </audio></td>
-              </tr>
-              <tr>
-                  <td>ID</td>
-                  <td><audio controls="controls">
-                          <source src="singing/istftnet/groundtruth/id_2.wav" autoplay />Your browser does not support the audio
-                          element.
-                      </audio></td>
-                  <td><audio controls="controls">
-                          <source src="singing/istftnet/base/id_2.wav" autoplay />Your browser does not support the audio
-                          element.
-                      </audio></td>
-                  <td><audio controls="controls">
-                          <source src="singing/istftnet/S/id_2.wav" autoplay />Your browser does not support the audio
-                          element.
-                      </audio></td>
-                  <td><audio controls="controls">
-                          <source src="singing/istftnet/C/id_2.wav" autoplay />Your browser does not support the audio
-                          element.
-                      </audio></td>
-                  <td><audio controls="controls">
-                          <source src="singing/istftnet/H/id_2.wav" autoplay />Your browser does not support the audio
-                          element.
-                      </audio></td>
-              </tr>
-              <tr>
-                  <td>ID</td>
-                  <td><audio controls="controls">
-                          <source src="singing/istftnet/groundtruth/id_3.wav" autoplay />Your browser does not support the audio
-                          element.
-                      </audio></td>
-                  <td><audio controls="controls">
-                          <source src="singing/istftnet/base/id_3.wav" autoplay />Your browser does not support the audio
-                          element.
-                      </audio></td>
-                  <td><audio controls="controls">
-                          <source src="singing/istftnet/S/id_3.wav" autoplay />Your browser does not support the audio
-                          element.
-                      </audio></td>
-                  <td><audio controls="controls">
-                          <source src="singing/istftnet/C/id_3.wav" autoplay />Your browser does not support the audio
-                          element.
-                      </audio></td>
-                  <td><audio controls="controls">
-                          <source src="singing/istftnet/H/id_3.wav" autoplay />Your browser does not support the audio
-                          element.
-                      </audio></td>
-              </tr>
-              <tr>
-                  <td>OD</td>
-                  <td><audio controls="controls">
-                          <source src="singing/istftnet/groundtruth/od_1.wav" autoplay />Your browser does not support the audio
-                          element.
-                      </audio></td>
-                  <td><audio controls="controls">
-                          <source src="singing/istftnet/base/od_1.wav" autoplay />Your browser does not support the audio
-                          element.
-                      </audio></td>
-                  <td><audio controls="controls">
-                          <source src="singing/istftnet/S/od_1.wav" autoplay />Your browser does not support the audio
-                          element.
-                      </audio></td>
-                  <td><audio controls="controls">
-                          <source src="singing/istftnet/C/od_1.wav" autoplay />Your browser does not support the audio
-                          element.
-                      </audio></td>
-                  <td><audio controls="controls">
-                          <source src="singing/istftnet/H/od_1.wav" autoplay />Your browser does not support the audio
-                          element.
-                      </audio></td>
-              </tr>
-              <tr>
-                  <td>OD</td>
-                  <td><audio controls="controls">
-                          <source src="singing/istftnet/groundtruth/od_2.wav" autoplay />Your browser does not support the audio
-                          element.
-                      </audio></td>
-                  <td><audio controls="controls">
-                          <source src="singing/istftnet/base/od_2.wav" autoplay />Your browser does not support the audio
-                          element.
-                      </audio></td>
-                  <td><audio controls="controls">
-                          <source src="singing/istftnet/S/od_2.wav" autoplay />Your browser does not support the audio
-                          element.
-                      </audio></td>
-                  <td><audio controls="controls">
-                          <source src="singing/istftnet/C/od_2.wav" autoplay />Your browser does not support the audio
-                          element.
-                      </audio></td>
-                  <td><audio controls="controls">
-                          <source src="singing/istftnet/H/od_2.wav" autoplay />Your browser does not support the audio
-                          element.
-                      </audio></td>
-              </tr>
-              <tr>
-                  <td>OD</td>
-                  <td><audio controls="controls">
-                          <source src="singing/istftnet/groundtruth/od_3.wav" autoplay />Your browser does not support the audio
-                          element.
-                      </audio></td>
-                  <td><audio controls="controls">
-                          <source src="singing/istftnet/base/od_3.wav" autoplay />Your browser does not support the audio
-                          element.
-                      </audio></td>
-                  <td><audio controls="controls">
-                          <source src="singing/istftnet/S/od_3.wav" autoplay />Your browser does not support the audio
-                          element.
-                      </audio></td>
-                  <td><audio controls="controls">
-                          <source src="singing/istftnet/C/od_3.wav" autoplay />Your browser does not support the audio
-                          element.
-                      </audio></td>
-                  <td><audio controls="controls">
-                          <source src="singing/istftnet/H/od_3.wav" autoplay />Your browser does not support the audio
                           element.
                       </audio></td>
               </tr>
