@@ -1,0 +1,981 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- updated by Anonymous author -->
+
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="Hugo 0.66.0" />
+  <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- 引入Bootstrap CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+
+  <!-- 引入jQuery -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+  <!-- 引入Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,600" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/github.min.css">
+  <link rel="stylesheet" href="../css/normalize.css">
+  <link rel="stylesheet" href="../css/skeleton.css">
+  <link rel="stylesheet" href="../css/custom.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="alternate" href="index.xml" type="application/rss+xml" title="Speech Research">
+  <link rel="shortcut icon" href="favicon.png" type="image/x-icon" />
+  <style>
+    body {
+      font-size: 20px;
+      /* 设置默认字体大小 */
+
+    }
+
+    thead {
+      border-top: 1px solid #ccc;
+    }
+
+    .table td {
+      border: solid 3px #ccc;
+    }
+
+    .table-container {
+      overflow-x: auto;
+      /* width:120%; */
+      margin: 0 auto;
+    }
+
+    /* table {
+      overflow-x: auto;
+    } */
+
+    .audio-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border: none
+    }
+
+    /* .video-container {
+      position: relative;
+      width: 600px;
+      margin: 0 auto;
+      padding-bottom: 56.25%; /* 16:9宽高比，调整此值适配其他比例的视频 */
+    /* overflow: hidden;
+    }
+
+    /* 视频元素的样式 */
+    /* .video-container video {
+      /* position: absolute; */
+    /* top: 0;
+      left: 0;
+      width: 600px; */
+    /* height: 100%; */
+
+    video {
+      width: 640px;
+      /* 设置视频宽度 */
+      height: 360px;
+      /* 设置视频高度 */
+    }
+
+    @media(min-width:1200px) {
+      .table-container {
+        overflow-x: auto;
+        width: 100%;
+        margin: 0 auto;
+
+      }
+    }
+
+    @media (max-width: 600px) {
+
+      /* 在手机屏幕上应用以下样式 */
+      body {
+        font-size: 14px;
+        /* 缩小字体大小 */
+      }
+
+      h1 {
+        font-size: 22px;
+        /* 缩小标题字体大小 */
+      }
+
+      h2 {
+        font-size: 18px;
+        /* 缩小标题字体大小 */
+      }
+
+      nav ul li {
+        display: block;
+        /* 列表项显示为块级元素，方便手机点击 */
+      }
+
+      .video-container {
+        padding-bottom: 75%;
+        /* 4:3宽高比，调整此值适配其他比例的视频 */
+      }
+
+      video {
+        width: 400px;
+        /* 设置视频宽度 */
+        /* height: 360px; 设置视频高度 */
+      }
+    }
+
+    table tr td:nth-child(3), 
+    table tr th:nth-child(3) { 
+      background-color: #FFFFFF; 
+    } 
+
+    table tr td:nth-child(5), 
+    table tr th:nth-child(5) { 
+      background-color: #FFFFFF; 
+    }
+
+    table tr td:nth-child(4), 
+    table tr th:nth-child(4) { 
+      background-color: #FFFFFF; 
+    }
+
+    table tr td:nth-child(6), 
+    table tr th:nth-child(6) { 
+      background-color: #FFFFFF; 
+    }
+
+    table tr td:nth-child(8), 
+    table tr th:nth-child(8) { 
+      background-color: #FFFFFF; 
+    }
+
+    table tr td:nth-child(7), 
+    table tr th:nth-child(7) { 
+      background-color: #FFFFFF; 
+    }
+
+    table {
+      border: 1px solid black;
+      text-align: center;
+      /* Center-align text */
+      padding: 8px;
+      /* Add some padding for aesthetics */
+    }
+  </style>
+  <title>A Universal Harmonic Discriminator for High-quality GAN-based Vocoder</title>
+</head>
+
+<body rightmargin="150" leftmargin="150" topmargin="100" bottommargin="100" line-height:160%>
+  <!-- <font size="5"> -->
+
+  <div class="container">
+
+    <header role="banner">
+
+    </header>
+    <main role="main">
+      <article itemscope itemtype="https://schema.org/BlogPosting">
+        <br></br>
+        <h1 itemprop="headline" align="center">
+          <font color="000093">MDDM: A Multi-view Discriminative Enhanced Diffusion-based Model for Speech Enhancement
+          </font>
+        </h1>
+        <br></br>
+        <p style="line-height:1" align="center"><b>
+            <font color="061E61"><a href="https://MDDM.github.io/">Nan Xu</a><sup> &#x1F4EE;,1</sup>  
+            </font>
+          </b></p>
+        <p style="line-height:1" align="center">
+          <font color="061E61"><sup>&#x1F4EE;</sup>Corresponding author</font>
+        </p>
+        <section itemprop="entry-text">
+          <br>
+
+          <h2 id="abstract">
+            <font color="000093">Abstract</font>
+          </h2>
+          <p style="text-align: justify;">
+            <font color="061E61">
+             With the development of deep learning, speech enhancement has been greatly optimized in terms of speech perception and intelligibility. Previous approaches typically 
+              focus on the discriminative supervised learning or generative modeling, which tends to introduce speech distortions or high computational cost. In this paper, we 
+              propose MDDM, a Multi-view Discriminative enhanced Diffusion-based Model. Specifically, we take the features of three domains (time, frequency and noise) as inputs 
+              of a discriminative prediction network, generating the preliminary spectrogram result. Then, the discriminative output can be converted to clean speech by several 
+              inference sampling steps. Due to the intersection of the distributions between discriminative output and clean target, the smaller sampling steps can achieve the 
+              competitive performance compared to other diffusion-based methods, thereby mitigating the computational cost. Experiments conducted on a 
+              public dataset and a real-world dataset validate the effectiveness of the proposed method, either on subjective or objective metric.
+          </p>
+          <br></br>
+          
+          <h2 id="section_3">
+            <font color="000093">Demos for Models</font>
+          </h2>
+          <p>
+            <font color="061E61">✅ speech demos.
+            </font>
+          </p>
+
+          <div class="table-container">
+            <table class="table" align="center" style="table-layout: fixed;word-break:break-word">
+              <thead>
+                <tr>
+                  <th scope="col" width="90px" style="background-color: #ADD8E6;">
+                    <font color="061E61">Type</font>
+                  </th>
+                  <th scope="col" width="325px" style="background-color: #ADD8E6;">
+                    <font color="061E61">Ground Truth</font>
+                  </th>
+                  <th scope="col" width="325px" style="background-color: #ADD8E6;">
+                    <font color="061E61">HiFiGAN</font>
+                  </th>
+                  <th scope="col" width="325px" style="background-color: #ADD8E6;">
+                    <font color="061E61">+S</font>
+                  </th>
+                  <th scope="col" width="325px" style="background-color: #ADD8E6;">
+                    <font color="061E61">+C</font>
+                  </th>
+                  <th scope="col" width="325px" style="background-color: #ADD8E6;">
+                    <font color="061E61">+H</font>
+                  </th>         
+                </tr>
+              </thead>
+  
+              <tbody>
+                <tr>
+                  <td>ID</td>
+                  <td><audio controls="controls">
+                          <source src="speech/hifigan/groundtruth/id_1.wav" autoplay />Your browser does not support the audio
+                          element.
+                      </audio></td>
+                  <td><audio controls="controls">
+                          <source src="speech/hifigan/base/id_1.wav" autoplay />Your browser does not support the audio
+                          element.
+                      </audio></td>
+                  <td><audio controls="controls">
+                          <source src="speech/hifigan/S/id_1.wav" autoplay />Your browser does not support the audio
+                          element.
+                      </audio></td>
+                  <td><audio controls="controls">
+                          <source src="speech/hifigan/C/id_1.wav" autoplay />Your browser does not support the audio
+                          element.
+                      </audio></td>
+                  <td><audio controls="controls">
+                          <source src="speech/hifigan/H/id_1.wav" autoplay />Your browser does not support the audio
+                          element.
+                      </audio></td>
+              </tr>
+              <tr>
+                  <td>ID</td>
+                  <td><audio controls="controls">
+                          <source src="speech/hifigan/groundtruth/id_2.wav" autoplay />Your browser does not support the audio
+                          element.
+                      </audio></td>
+                  <td><audio controls="controls">
+                          <source src="speech/hifigan/base/id_2.wav" autoplay />Your browser does not support the audio
+                          element.
+                      </audio></td>
+                  <td><audio controls="controls">
+                          <source src="speech/hifigan/S/id_2.wav" autoplay />Your browser does not support the audio
+                          element.
+                      </audio></td>
+                  <td><audio controls="controls">
+                          <source src="speech/hifigan/C/id_2.wav" autoplay />Your browser does not support the audio
+                          element.
+                      </audio></td>
+                  <td><audio controls="controls">
+                          <source src="speech/hifigan/H/id_2.wav" autoplay />Your browser does not support the audio
+                          element.
+                      </audio></td>
+              </tr>
+              <tr>
+                  <td>ID</td>
+                  <td><audio controls="controls">
+                          <source src="speech/hifigan/groundtruth/id_3.wav" autoplay />Your browser does not support the audio
+                          element.
+                      </audio></td>
+                  <td><audio controls="controls">
+                          <source src="speech/hifigan/base/id_3.wav" autoplay />Your browser does not support the audio
+                          element.
+                      </audio></td>
+                  <td><audio controls="controls">
+                          <source src="speech/hifigan/S/id_3.wav" autoplay />Your browser does not support the audio
+                          element.
+                      </audio></td>
+                  <td><audio controls="controls">
+                          <source src="speech/hifigan/C/id_3.wav" autoplay />Your browser does not support the audio
+                          element.
+                      </audio></td>
+                  <td><audio controls="controls">
+                          <source src="speech/hifigan/H/id_3.wav" autoplay />Your browser does not support the audio
+                          element.
+                      </audio></td>
+              </tr>
+              <tr>
+                  <td>OD</td>
+                  <td><audio controls="controls">
+                          <source src="speech/hifigan/groundtruth/od_1.wav" autoplay />Your browser does not support the audio
+                          element.
+                      </audio></td>
+                  <td><audio controls="controls">
+                          <source src="speech/hifigan/base/od_1.wav" autoplay />Your browser does not support the audio
+                          element.
+                      </audio></td>
+                  <td><audio controls="controls">
+                          <source src="speech/hifigan/S/od_1.wav" autoplay />Your browser does not support the audio
+                          element.
+                      </audio></td>
+                  <td><audio controls="controls">
+                          <source src="speech/hifigan/C/od_1.wav" autoplay />Your browser does not support the audio
+                          element.
+                      </audio></td>
+                  <td><audio controls="controls">
+                          <source src="speech/hifigan/H/od_1.wav" autoplay />Your browser does not support the audio
+                          element.
+                      </audio></td>
+              </tr>
+              <tr>
+                  <td>OD</td>
+                  <td><audio controls="controls">
+                          <source src="speech/hifigan/groundtruth/od_2.wav" autoplay />Your browser does not support the audio
+                          element.
+                      </audio></td>
+                  <td><audio controls="controls">
+                          <source src="speech/hifigan/base/od_2.wav" autoplay />Your browser does not support the audio
+                          element.
+                      </audio></td>
+                  <td><audio controls="controls">
+                          <source src="speech/hifigan/S/od_2.wav" autoplay />Your browser does not support the audio
+                          element.
+                      </audio></td>
+                  <td><audio controls="controls">
+                          <source src="speech/hifigan/C/od_2.wav" autoplay />Your browser does not support the audio
+                          element.
+                      </audio></td>
+                  <td><audio controls="controls">
+                          <source src="speech/hifigan/H/od_2.wav" autoplay />Your browser does not support the audio
+                          element.
+                      </audio></td>
+              </tr>
+              <tr>
+                  <td>OD</td>
+                  <td><audio controls="controls">
+                          <source src="speech/hifigan/groundtruth/od_3.wav" autoplay />Your browser does not support the audio
+                          element.
+                      </audio></td>
+                  <td><audio controls="controls">
+                          <source src="speech/hifigan/base/od_3.wav" autoplay />Your browser does not support the audio
+                          element.
+                      </audio></td>
+                  <td><audio controls="controls">
+                          <source src="speech/hifigan/S/od_3.wav" autoplay />Your browser does not support the audio
+                          element.
+                      </audio></td>
+                  <td><audio controls="controls">
+                          <source src="speech/hifigan/C/od_3.wav" autoplay />Your browser does not support the audio
+                          element.
+                      </audio></td>
+                  <td><audio controls="controls">
+                          <source src="speech/hifigan/H/od_3.wav" autoplay />Your browser does not support the audio
+                          element.
+                      </audio></td>
+              </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <p>
+            <font color="061E61">✅ singing demos.
+            </font>
+          </p>
+
+
+          <div class="table-container">
+            <table class="table" align="center" style="table-layout: fixed;word-break:break-word">
+              <thead>
+                <tr>
+                  <th scope="col" width="90px" style="background-color: #ADD8E6;">
+                    <font color="061E61">Type</font>
+                  </th>
+                  <th scope="col" width="325px" style="background-color: #ADD8E6;">
+                    <font color="061E61">Ground Truth</font>
+                  </th>
+                  <th scope="col" width="325px" style="background-color: #ADD8E6;">
+                    <font color="061E61">HiFiGAN</font>
+                  </th>
+                  <th scope="col" width="325px" style="background-color: #ADD8E6;">
+                    <font color="061E61">+S</font>
+                  </th>
+                  <th scope="col" width="325px" style="background-color: #ADD8E6;">
+                    <font color="061E61">+C</font>
+                  </th>
+                  <th scope="col" width="325px" style="background-color: #ADD8E6;">
+                    <font color="061E61">+H</font>
+                  </th>         
+                </tr>
+              </thead>
+  
+              <tbody>
+                <tr>
+                  <td>ID</td>
+                  <td><audio controls="controls">
+                          <source src="singing/hifigan/groundtruth/id_1.wav" autoplay />Your browser does not support the audio
+                          element.
+                      </audio></td>
+                  <td><audio controls="controls">
+                          <source src="singing/hifigan/base/id_1.wav" autoplay />Your browser does not support the audio
+                          element.
+                      </audio></td>
+                  <td><audio controls="controls">
+                          <source src="singing/hifigan/S/id_1.wav" autoplay />Your browser does not support the audio
+                          element.
+                      </audio></td>
+                  <td><audio controls="controls">
+                          <source src="singing/hifigan/C/id_1.wav" autoplay />Your browser does not support the audio
+                          element.
+                      </audio></td>
+                  <td><audio controls="controls">
+                          <source src="singing/hifigan/H/id_1.wav" autoplay />Your browser does not support the audio
+                          element.
+                      </audio></td>
+              </tr>
+              <tr>
+                  <td>ID</td>
+                  <td><audio controls="controls">
+                          <source src="singing/hifigan/groundtruth/id_2.wav" autoplay />Your browser does not support the audio
+                          element.
+                      </audio></td>
+                  <td><audio controls="controls">
+                          <source src="singing/hifigan/base/id_2.wav" autoplay />Your browser does not support the audio
+                          element.
+                      </audio></td>
+                  <td><audio controls="controls">
+                          <source src="singing/hifigan/S/id_2.wav" autoplay />Your browser does not support the audio
+                          element.
+                      </audio></td>
+                  <td><audio controls="controls">
+                          <source src="singing/hifigan/C/id_2.wav" autoplay />Your browser does not support the audio
+                          element.
+                      </audio></td>
+                  <td><audio controls="controls">
+                          <source src="singing/hifigan/H/id_2.wav" autoplay />Your browser does not support the audio
+                          element.
+                      </audio></td>
+              </tr>
+              <tr>
+                  <td>ID</td>
+                  <td><audio controls="controls">
+                          <source src="singing/hifigan/groundtruth/id_3.wav" autoplay />Your browser does not support the audio
+                          element.
+                      </audio></td>
+                  <td><audio controls="controls">
+                          <source src="singing/hifigan/base/id_3.wav" autoplay />Your browser does not support the audio
+                          element.
+                      </audio></td>
+                  <td><audio controls="controls">
+                          <source src="singing/hifigan/S/id_3.wav" autoplay />Your browser does not support the audio
+                          element.
+                      </audio></td>
+                  <td><audio controls="controls">
+                          <source src="singing/hifigan/C/id_3.wav" autoplay />Your browser does not support the audio
+                          element.
+                      </audio></td>
+                  <td><audio controls="controls">
+                          <source src="singing/hifigan/H/id_3.wav" autoplay />Your browser does not support the audio
+                          element.
+                      </audio></td>
+              </tr>
+              <tr>
+                  <td>OD</td>
+                  <td><audio controls="controls">
+                          <source src="singing/hifigan/groundtruth/od_1.wav" autoplay />Your browser does not support the audio
+                          element.
+                      </audio></td>
+                  <td><audio controls="controls">
+                          <source src="singing/hifigan/base/od_1.wav" autoplay />Your browser does not support the audio
+                          element.
+                      </audio></td>
+                  <td><audio controls="controls">
+                          <source src="singing/hifigan/S/od_1.wav" autoplay />Your browser does not support the audio
+                          element.
+                      </audio></td>
+                  <td><audio controls="controls">
+                          <source src="singing/hifigan/C/od_1.wav" autoplay />Your browser does not support the audio
+                          element.
+                      </audio></td>
+                  <td><audio controls="controls">
+                          <source src="singing/hifigan/H/od_1.wav" autoplay />Your browser does not support the audio
+                          element.
+                      </audio></td>
+              </tr>
+              <tr>
+                  <td>OD</td>
+                  <td><audio controls="controls">
+                          <source src="singing/hifigan/groundtruth/od_2.wav" autoplay />Your browser does not support the audio
+                          element.
+                      </audio></td>
+                  <td><audio controls="controls">
+                          <source src="singing/hifigan/base/od_2.wav" autoplay />Your browser does not support the audio
+                          element.
+                      </audio></td>
+                  <td><audio controls="controls">
+                          <source src="singing/hifigan/S/od_2.wav" autoplay />Your browser does not support the audio
+                          element.
+                      </audio></td>
+                  <td><audio controls="controls">
+                          <source src="singing/hifigan/C/od_2.wav" autoplay />Your browser does not support the audio
+                          element.
+                      </audio></td>
+                  <td><audio controls="controls">
+                          <source src="singing/hifigan/H/od_2.wav" autoplay />Your browser does not support the audio
+                          element.
+                      </audio></td>
+              </tr>
+              <tr>
+                  <td>OD</td>
+                  <td><audio controls="controls">
+                          <source src="singing/hifigan/groundtruth/od_3.wav" autoplay />Your browser does not support the audio
+                          element.
+                      </audio></td>
+                  <td><audio controls="controls">
+                          <source src="singing/hifigan/base/od_3.wav" autoplay />Your browser does not support the audio
+                          element.
+                      </audio></td>
+                  <td><audio controls="controls">
+                          <source src="singing/hifigan/S/od_3.wav" autoplay />Your browser does not support the audio
+                          element.
+                      </audio></td>
+                  <td><audio controls="controls">
+                          <source src="singing/hifigan/C/od_3.wav" autoplay />Your browser does not support the audio
+                          element.
+                      </audio></td>
+                  <td><audio controls="controls">
+                          <source src="singing/hifigan/H/od_3.wav" autoplay />Your browser does not support the audio
+                          element.
+                      </audio></td>
+              </tr>
+              </tbody>
+            </table>
+          </div>  
+
+          <br></br>
+          <h2 id="section_4">
+            <font color="000093">Demos for iSTFTNET</font>
+          </h2>
+          <p>
+            <font color="061E61">✅ speech demos.
+            </font>
+          </p>
+
+          <div class="table-container">
+            <table class="table" align="center" style="table-layout: fixed;word-break:break-word">
+              <thead>
+                <tr>
+                  <th scope="col" width="90px" style="background-color: #ADD8E6;">
+                    <font color="061E61">Type</font>
+                  </th>
+                  <th scope="col" width="325px" style="background-color: #ADD8E6;">
+                    <font color="061E61">Ground Truth</font>
+                  </th>
+                  <th scope="col" width="325px" style="background-color: #ADD8E6;">
+                    <font color="061E61">iSTFTNET</font>
+                  </th>
+                  <th scope="col" width="325px" style="background-color: #ADD8E6;">
+                    <font color="061E61">+S</font>
+                  </th>
+                  <th scope="col" width="325px" style="background-color: #ADD8E6;">
+                    <font color="061E61">+C</font>
+                  </th>
+                  <th scope="col" width="325px" style="background-color: #ADD8E6;">
+                    <font color="061E61">+H</font>
+                  </th>         
+                </tr>
+              </thead>
+  
+              <tbody>
+                <tr>
+                  <td>ID</td>
+                  <td><audio controls="controls">
+                          <source src="speech/istftnet/groundtruth/id_1.wav" autoplay />Your browser does not support the audio
+                          element.
+                      </audio></td>
+                  <td><audio controls="controls">
+                          <source src="speech/istftnet/base/id_1.wav" autoplay />Your browser does not support the audio
+                          element.
+                      </audio></td>
+                  <td><audio controls="controls">
+                          <source src="speech/istftnet/S/id_1.wav" autoplay />Your browser does not support the audio
+                          element.
+                      </audio></td>
+                  <td><audio controls="controls">
+                          <source src="speech/istftnet/C/id_1.wav" autoplay />Your browser does not support the audio
+                          element.
+                      </audio></td>
+                  <td><audio controls="controls">
+                          <source src="speech/istftnet/H/id_1.wav" autoplay />Your browser does not support the audio
+                          element.
+                      </audio></td>
+              </tr>
+              <tr>
+                  <td>ID</td>
+                  <td><audio controls="controls">
+                          <source src="speech/istftnet/groundtruth/id_2.wav" autoplay />Your browser does not support the audio
+                          element.
+                      </audio></td>
+                  <td><audio controls="controls">
+                          <source src="speech/istftnet/base/id_2.wav" autoplay />Your browser does not support the audio
+                          element.
+                      </audio></td>
+                  <td><audio controls="controls">
+                          <source src="speech/istftnet/S/id_2.wav" autoplay />Your browser does not support the audio
+                          element.
+                      </audio></td>
+                  <td><audio controls="controls">
+                          <source src="speech/istftnet/C/id_2.wav" autoplay />Your browser does not support the audio
+                          element.
+                      </audio></td>
+                  <td><audio controls="controls">
+                          <source src="speech/istftnet/H/id_2.wav" autoplay />Your browser does not support the audio
+                          element.
+                      </audio></td>
+              </tr>
+              <tr>
+                  <td>ID</td>
+                  <td><audio controls="controls">
+                          <source src="speech/istftnet/groundtruth/id_3.wav" autoplay />Your browser does not support the audio
+                          element.
+                      </audio></td>
+                  <td><audio controls="controls">
+                          <source src="speech/istftnet/base/id_3.wav" autoplay />Your browser does not support the audio
+                          element.
+                      </audio></td>
+                  <td><audio controls="controls">
+                          <source src="speech/istftnet/S/id_3.wav" autoplay />Your browser does not support the audio
+                          element.
+                      </audio></td>
+                  <td><audio controls="controls">
+                          <source src="speech/istftnet/C/id_3.wav" autoplay />Your browser does not support the audio
+                          element.
+                      </audio></td>
+                  <td><audio controls="controls">
+                          <source src="speech/istftnet/H/id_3.wav" autoplay />Your browser does not support the audio
+                          element.
+                      </audio></td>
+              </tr>
+              <tr>
+                  <td>OD</td>
+                  <td><audio controls="controls">
+                          <source src="speech/istftnet/groundtruth/od_1.wav" autoplay />Your browser does not support the audio
+                          element.
+                      </audio></td>
+                  <td><audio controls="controls">
+                          <source src="speech/istftnet/base/od_1.wav" autoplay />Your browser does not support the audio
+                          element.
+                      </audio></td>
+                  <td><audio controls="controls">
+                          <source src="speech/istftnet/S/od_1.wav" autoplay />Your browser does not support the audio
+                          element.
+                      </audio></td>
+                  <td><audio controls="controls">
+                          <source src="speech/istftnet/C/od_1.wav" autoplay />Your browser does not support the audio
+                          element.
+                      </audio></td>
+                  <td><audio controls="controls">
+                          <source src="speech/istftnet/H/od_1.wav" autoplay />Your browser does not support the audio
+                          element.
+                      </audio></td>
+              </tr>
+              <tr>
+                  <td>OD</td>
+                  <td><audio controls="controls">
+                          <source src="speech/istftnet/groundtruth/od_2.wav" autoplay />Your browser does not support the audio
+                          element.
+                      </audio></td>
+                  <td><audio controls="controls">
+                          <source src="speech/istftnet/base/od_2.wav" autoplay />Your browser does not support the audio
+                          element.
+                      </audio></td>
+                  <td><audio controls="controls">
+                          <source src="speech/istftnet/S/od_2.wav" autoplay />Your browser does not support the audio
+                          element.
+                      </audio></td>
+                  <td><audio controls="controls">
+                          <source src="speech/istftnet/C/od_2.wav" autoplay />Your browser does not support the audio
+                          element.
+                      </audio></td>
+                  <td><audio controls="controls">
+                          <source src="speech/istftnet/H/od_2.wav" autoplay />Your browser does not support the audio
+                          element.
+                      </audio></td>
+              </tr>
+              <tr>
+                  <td>OD</td>
+                  <td><audio controls="controls">
+                          <source src="speech/istftnet/groundtruth/od_3.wav" autoplay />Your browser does not support the audio
+                          element.
+                      </audio></td>
+                  <td><audio controls="controls">
+                          <source src="speech/istftnet/base/od_3.wav" autoplay />Your browser does not support the audio
+                          element.
+                      </audio></td>
+                  <td><audio controls="controls">
+                          <source src="speech/istftnet/S/od_3.wav" autoplay />Your browser does not support the audio
+                          element.
+                      </audio></td>
+                  <td><audio controls="controls">
+                          <source src="speech/istftnet/C/od_3.wav" autoplay />Your browser does not support the audio
+                          element.
+                      </audio></td>
+                  <td><audio controls="controls">
+                          <source src="speech/istftnet/H/od_3.wav" autoplay />Your browser does not support the audio
+                          element.
+                      </audio></td>
+              </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <p>
+            <font color="061E61">✅ singing demos.
+            </font>
+          </p>
+
+          <div class="table-container">
+            <table class="table" align="center" style="table-layout: fixed;word-break:break-word">
+              <thead>
+                <tr>
+                  <th scope="col" width="90px" style="background-color: #ADD8E6;">
+                    <font color="061E61">Type</font>
+                  </th>
+                  <th scope="col" width="325px" style="background-color: #ADD8E6;">
+                    <font color="061E61">Ground Truth</font>
+                  </th>
+                  <th scope="col" width="325px" style="background-color: #ADD8E6;">
+                    <font color="061E61">iSTFTNET</font>
+                  </th>
+                  <th scope="col" width="325px" style="background-color: #ADD8E6;">
+                    <font color="061E61">+S</font>
+                  </th>
+                  <th scope="col" width="325px" style="background-color: #ADD8E6;">
+                    <font color="061E61">+C</font>
+                  </th>
+                  <th scope="col" width="325px" style="background-color: #ADD8E6;">
+                    <font color="061E61">+H</font>
+                  </th>         
+                </tr>
+              </thead>
+  
+              <tbody>
+                <tr>
+                  <td>ID</td>
+                  <td><audio controls="controls">
+                          <source src="singing/istftnet/groundtruth/id_1.wav" autoplay />Your browser does not support the audio
+                          element.
+                      </audio></td>
+                  <td><audio controls="controls">
+                          <source src="singing/istftnet/base/id_1.wav" autoplay />Your browser does not support the audio
+                          element.
+                      </audio></td>
+                  <td><audio controls="controls">
+                          <source src="singing/istftnet/S/id_1.wav" autoplay />Your browser does not support the audio
+                          element.
+                      </audio></td>
+                  <td><audio controls="controls">
+                          <source src="singing/istftnet/C/id_1.wav" autoplay />Your browser does not support the audio
+                          element.
+                      </audio></td>
+                  <td><audio controls="controls">
+                          <source src="singing/istftnet/H/id_1.wav" autoplay />Your browser does not support the audio
+                          element.
+                      </audio></td>
+              </tr>
+              <tr>
+                  <td>ID</td>
+                  <td><audio controls="controls">
+                          <source src="singing/istftnet/groundtruth/id_2.wav" autoplay />Your browser does not support the audio
+                          element.
+                      </audio></td>
+                  <td><audio controls="controls">
+                          <source src="singing/istftnet/base/id_2.wav" autoplay />Your browser does not support the audio
+                          element.
+                      </audio></td>
+                  <td><audio controls="controls">
+                          <source src="singing/istftnet/S/id_2.wav" autoplay />Your browser does not support the audio
+                          element.
+                      </audio></td>
+                  <td><audio controls="controls">
+                          <source src="singing/istftnet/C/id_2.wav" autoplay />Your browser does not support the audio
+                          element.
+                      </audio></td>
+                  <td><audio controls="controls">
+                          <source src="singing/istftnet/H/id_2.wav" autoplay />Your browser does not support the audio
+                          element.
+                      </audio></td>
+              </tr>
+              <tr>
+                  <td>ID</td>
+                  <td><audio controls="controls">
+                          <source src="singing/istftnet/groundtruth/id_3.wav" autoplay />Your browser does not support the audio
+                          element.
+                      </audio></td>
+                  <td><audio controls="controls">
+                          <source src="singing/istftnet/base/id_3.wav" autoplay />Your browser does not support the audio
+                          element.
+                      </audio></td>
+                  <td><audio controls="controls">
+                          <source src="singing/istftnet/S/id_3.wav" autoplay />Your browser does not support the audio
+                          element.
+                      </audio></td>
+                  <td><audio controls="controls">
+                          <source src="singing/istftnet/C/id_3.wav" autoplay />Your browser does not support the audio
+                          element.
+                      </audio></td>
+                  <td><audio controls="controls">
+                          <source src="singing/istftnet/H/id_3.wav" autoplay />Your browser does not support the audio
+                          element.
+                      </audio></td>
+              </tr>
+              <tr>
+                  <td>OD</td>
+                  <td><audio controls="controls">
+                          <source src="singing/istftnet/groundtruth/od_1.wav" autoplay />Your browser does not support the audio
+                          element.
+                      </audio></td>
+                  <td><audio controls="controls">
+                          <source src="singing/istftnet/base/od_1.wav" autoplay />Your browser does not support the audio
+                          element.
+                      </audio></td>
+                  <td><audio controls="controls">
+                          <source src="singing/istftnet/S/od_1.wav" autoplay />Your browser does not support the audio
+                          element.
+                      </audio></td>
+                  <td><audio controls="controls">
+                          <source src="singing/istftnet/C/od_1.wav" autoplay />Your browser does not support the audio
+                          element.
+                      </audio></td>
+                  <td><audio controls="controls">
+                          <source src="singing/istftnet/H/od_1.wav" autoplay />Your browser does not support the audio
+                          element.
+                      </audio></td>
+              </tr>
+              <tr>
+                  <td>OD</td>
+                  <td><audio controls="controls">
+                          <source src="singing/istftnet/groundtruth/od_2.wav" autoplay />Your browser does not support the audio
+                          element.
+                      </audio></td>
+                  <td><audio controls="controls">
+                          <source src="singing/istftnet/base/od_2.wav" autoplay />Your browser does not support the audio
+                          element.
+                      </audio></td>
+                  <td><audio controls="controls">
+                          <source src="singing/istftnet/S/od_2.wav" autoplay />Your browser does not support the audio
+                          element.
+                      </audio></td>
+                  <td><audio controls="controls">
+                          <source src="singing/istftnet/C/od_2.wav" autoplay />Your browser does not support the audio
+                          element.
+                      </audio></td>
+                  <td><audio controls="controls">
+                          <source src="singing/istftnet/H/od_2.wav" autoplay />Your browser does not support the audio
+                          element.
+                      </audio></td>
+              </tr>
+              <tr>
+                  <td>OD</td>
+                  <td><audio controls="controls">
+                          <source src="singing/istftnet/groundtruth/od_3.wav" autoplay />Your browser does not support the audio
+                          element.
+                      </audio></td>
+                  <td><audio controls="controls">
+                          <source src="singing/istftnet/base/od_3.wav" autoplay />Your browser does not support the audio
+                          element.
+                      </audio></td>
+                  <td><audio controls="controls">
+                          <source src="singing/istftnet/S/od_3.wav" autoplay />Your browser does not support the audio
+                          element.
+                      </audio></td>
+                  <td><audio controls="controls">
+                          <source src="singing/istftnet/C/od_3.wav" autoplay />Your browser does not support the audio
+                          element.
+                      </audio></td>
+                  <td><audio controls="controls">
+                          <source src="singing/istftnet/H/od_3.wav" autoplay />Your browser does not support the audio
+                          element.
+                      </audio></td>
+              </tr>
+              </tbody>
+            </table>
+          </div>  
+  </div>
+  </div>
+  </div>
+  <br></br>
+
+
+  <hr>
+
+  </section>
+  </article>
+  </main>
+
+  </div>
+
+
+  <script>
+    (function (i, s, o, g, r, a, m) {
+      i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+        (i[r].q = i[r].q || []).push(arguments)
+      }, i[r].l = 1 * new Date(); a = s.createElement(o),
+        m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+    ga('create', 'UA-139981676-1', 'auto');
+    ga('send', 'pageview');
+  </script>
+
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+
+
+
+  <script type="text/x-mathjax-config">
+     MathJax.Hub.Config({
+         HTML: ["input/TeX","output/HTML-CSS"],
+         TeX: {
+                Macros: {
+                         bm: ["\\boldsymbol{#1}", 1],
+                         argmax: ["\\mathop{\\rm arg\\,max}\\limits"],
+                         argmin: ["\\mathop{\\rm arg\\,min}\\limits"]},
+                extensions: ["AMSmath.js","AMSsymbols.js"],
+                equationNumbers: { autoNumber: "AMS" } },
+         extensions: ["tex2jax.js"],
+         jax: ["input/TeX","output/HTML-CSS"],
+         tex2jax: { inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+                    displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+                    processEscapes: true },
+         "HTML-CSS": { availableFonts: ["TeX"],
+                       linebreaks: { automatic: true } }
+     });
+ </script>
+
+  <script type="text/x-mathjax-config">
+     MathJax.Hub.Config({
+       tex2jax: {
+         skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+       }
+     });
+ </script>
+
+  <script type="text/javascript" async
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML">
+    </script>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>
