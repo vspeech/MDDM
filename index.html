@@ -34,7 +34,7 @@
           </h1>
           <br></br>
           <p style="line-height:1" align="center"><b>
-              <font color="061E61">Nan Xu<sup>*1</sup>, Zhaolong Huang<sup>1</sup>, Xiaonan Zhi<sup>1</sup>, Hao Liu<sup>1</sup></font>
+              <font color="061E61">Nan Xu<sup>*</sup>, Zhaolong Huang, Xiaonan Zhi, Hao Liu</font>
             </b></p>
           <p style="line-height:0.6" align="center">
             <font color="061E61"><sup>1</sup>Alibaba Digital Media Entertainment Group, Beijing, China</font>
@@ -50,7 +50,7 @@
             <p style="text-align: justify;">
               <font color="061E61"> With the development of deep learning, speech enhancement has been greatly optimized in terms of speech perception and intelligibility. 
                 Previous approaches typically focus on the discriminative supervised learning or generative modeling, which tends to introduce speech distortions or high 
-                computational cost. In this paper, we propose {\bf MDDM}, a {\bf M}ulti-view {\bf D}iscriminative enhanced {\bf D}iffusion-based {\bf M}odel. Specifically, 
+                computational cost. In this paper, we propose MDDM, a Multi-view Discriminative enhanced Diffusion-based Model. Specifically, 
                 we take the features of three domains (time, frequency and noise) as inputs of a discriminative prediction network, generating the preliminary spectrogram result. 
                 Then, the discriminative output can be converted to clean speech by several inference sampling steps. Due to the intersection of the distributions between discriminative 
                 output and clean target, the smaller sampling steps can achieve the competitive performance compared to other diffusion-based methods, thereby mitigating the 
@@ -88,45 +88,96 @@
             <table class="table" align="center" style="table-layout: fixed;word-break:break-word">
               <thead>
                 <tr>
-                  <td scope="col" width="33%">
+                  <td scope="col" width="16%">
                     <font color="061E61">Mixture</font>
                   </td>
-                  <td scope="col" width="33%">
+                  <td scope="col" width="%14">
                     <font color="061E61">MDDM</font>
                   </td>
-                  <td scope="col" width="33%">
+                  <td scope="col" width="14%">
                     <font color="061E61">StoRM</font>
                   </td>
-                  <td scope="col" width="33%">
+                  <td scope="col" width="14%">
                     <font color="061E61">SGMSE+</font>
                   </td>
-                  <td scope="col" width="33%">
+                  <td scope="col" width="14%">
                     <font color="061E61">MDM</font>
                   </td>
-                  <td scope="col" width="33%">
+                  <td scope="col" width="14%">
                     <font color="061E61">HDemucs</font>
                   </td>
-                  <td scope="col" width="33%">
+                  <td scope="col" width="14%">
                     <font color="061E61">BSRNN</font>
                   </td>
                 </tr>
               </thead>
               <tbody>
                 <tr>
-                  <td scope="row"><audio controls="controls">
+                  <td scope="row"><audio controls="controls" controlsList="nodownload">
                       <source src="samples/1_text2audio/2_humantextprompt/A man is speaking under the water.wav"
                         autoplay />Your browser does not support the audio element.
                     </audio></td>
-                  <td><audio controls="controls">
+                  <td><audio controls="controls" controlsList="nodownload">
                       <source
                         src="samples/1_text2audio/2_humantextprompt/Two space shuttles are fighting in the space.wav"
                         autoplay />Your browser does not support the audio element.
                     </audio></td>
-                  <td><audio controls="controls">
+                  <td><audio controls="controls" controlsList="nodownload">
                       <source src="samples/1_text2audio/2_humantextprompt/The sound of a steam engine.wav" autoplay />
                       Your browser does not support the audio element.
                     </audio></td>
-
+                  <td><audio controls="controls" controlsList="nodownload">
+                      <source
+                        src="samples/1_text2audio/2_humantextprompt/Two space shuttles are fighting in the space.wav"
+                        autoplay />Your browser does not support the audio element.
+                    </audio></td>
+                  <td><audio controls="controls" controlsList="nodownload">
+                      <source
+                        src="samples/1_text2audio/2_humantextprompt/Two space shuttles are fighting in the space.wav"
+                        autoplay />Your browser does not support the audio element.
+                    </audio></td>
+                  <td><audio controls="controls" controlsList="nodownload">
+                      <source
+                        src="samples/1_text2audio/2_humantextprompt/Two space shuttles are fighting in the space.wav"
+                        autoplay />Your browser does not support the audio element.
+                    </audio></td>
+                  <td><audio controls="controls" controlsList="nodownload">
+                      <source
+                        src="samples/1_text2audio/2_humantextprompt/Two space shuttles are fighting in the space.wav"
+                        autoplay />Your browser does not support the audio element.
+                    </audio></td>
+                  <td scope="row"><audio controls="controls" controlsList="nodownload">
+                      <source src="samples/1_text2audio/2_humantextprompt/A man is speaking under the water.wav"
+                        autoplay />Your browser does not support the audio element.
+                    </audio></td>
+                  <td><audio controls="controls" controlsList="nodownload">
+                      <source
+                        src="samples/1_text2audio/2_humantextprompt/Two space shuttles are fighting in the space.wav"
+                        autoplay />Your browser does not support the audio element.
+                    </audio></td>
+                  <td><audio controls="controls" controlsList="nodownload">
+                      <source src="samples/1_text2audio/2_humantextprompt/The sound of a steam engine.wav" autoplay />
+                      Your browser does not support the audio element.
+                    </audio></td>
+                   <td><audio controls="controls" controlsList="nodownload">
+                      <source src="samples/1_text2audio/2_humantextprompt/The sound of a steam engine.wav" autoplay />
+                      Your browser does not support the audio element.
+                    </audio></td>
+                  <td><audio controls="controls" controlsList="nodownload">
+                      <source
+                        src="samples/1_text2audio/2_humantextprompt/Two space shuttles are fighting in the space.wav"
+                        autoplay />Your browser does not support the audio element.
+                    </audio></td>
+                  <td><audio controls="controls" controlsList="nodownload">
+                      <source
+                        src="samples/1_text2audio/2_humantextprompt/Two space shuttles are fighting in the space.wav"
+                        autoplay />Your browser does not support the audio element.
+                    </audio></td>
+                  <td><audio controls="controls" controlsList="nodownload">
+                      <source
+                        src="samples/1_text2audio/2_humantextprompt/Two space shuttles are fighting in the space.wav"
+                        autoplay />Your browser does not support the audio element.
+                    </audio></td>
                 </tr>
               </tbody>
             </table>
