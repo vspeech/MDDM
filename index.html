@@ -14,6 +14,143 @@
     integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <link rel="alternate" href="index.xml" type="application/rss+xml" title="Speech Research">
   <link rel="shortcut icon" href="favicon.png" type="image/x-icon" />
+  <style>
+    body {
+      font-size: 20px;
+      /* 设置默认字体大小 */
+
+    }
+
+    thead {
+      border-top: 1px solid #ccc;
+    }
+
+    .table td {
+      border: solid 3px #ccc;
+    }
+
+    .table-container {
+      overflow-x: auto;
+      /* width:120%; */
+      margin: 0 auto;
+    }
+
+    /* table {
+      overflow-x: auto;
+    } */
+
+    .audio-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border: none
+    }
+
+    /* .video-container {
+      position: relative;
+      width: 600px;
+      margin: 0 auto;
+      padding-bottom: 56.25%; /* 16:9宽高比，调整此值适配其他比例的视频 */
+    /* overflow: hidden;
+    }
+
+    /* 视频元素的样式 */
+    /* .video-container video {
+      /* position: absolute; */
+    /* top: 0;
+      left: 0;
+      width: 600px; */
+    /* height: 100%; */
+
+    video {
+      width: 640px;
+      /* 设置视频宽度 */
+      height: 360px;
+      /* 设置视频高度 */
+    }
+
+    @media(min-width:1200px) {
+      .table-container {
+        overflow-x: auto;
+        width: 100%;
+        margin: 0 auto;
+
+      }
+    }
+
+    @media (max-width: 600px) {
+
+      /* 在手机屏幕上应用以下样式 */
+      body {
+        font-size: 14px;
+        /* 缩小字体大小 */
+      }
+
+      h1 {
+        font-size: 22px;
+        /* 缩小标题字体大小 */
+      }
+
+      h2 {
+        font-size: 18px;
+        /* 缩小标题字体大小 */
+      }
+
+      nav ul li {
+        display: block;
+        /* 列表项显示为块级元素，方便手机点击 */
+      }
+
+      .video-container {
+        padding-bottom: 75%;
+        /* 4:3宽高比，调整此值适配其他比例的视频 */
+      }
+
+      video {
+        width: 400px;
+        /* 设置视频宽度 */
+        /* height: 360px; 设置视频高度 */
+      }
+    }
+
+    table tr td:nth-child(3), 
+    table tr th:nth-child(3) { 
+      background-color: #FFFFFF; 
+    } 
+
+    table tr td:nth-child(5), 
+    table tr th:nth-child(5) { 
+      background-color: #FFFFFF; 
+    }
+
+    table tr td:nth-child(4), 
+    table tr th:nth-child(4) { 
+      background-color: #FFFFFF; 
+    }
+
+    table tr td:nth-child(6), 
+    table tr th:nth-child(6) { 
+      background-color: #FFFFFF; 
+    }
+
+    table tr td:nth-child(8), 
+    table tr th:nth-child(8) { 
+      background-color: #FFFFFF; 
+    }
+
+    table tr td:nth-child(7), 
+    table tr th:nth-child(7) { 
+      background-color: #FFFFFF; 
+    }
+
+    table {
+      border: 1px solid black;
+      text-align: center;
+      /* Center-align text */
+      padding: 8px;
+      /* Add some padding for aesthetics */
+    }
+  </style>
   <title>MDDM: A Multi-view Discriminative Enhanced Diffusion-based Model for Speech Enhancement</title>
 </head>
 
