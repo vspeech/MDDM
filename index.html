@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="Hugo 0.66.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,600" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/github.min.css">
+  <link rel="stylesheet" href="../css/normalize.css">
+  <link rel="stylesheet" href="../css/skeleton.css">
+  <link rel="stylesheet" href="../css/custom.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="alternate" href="index.xml" type="application/rss+xml" title="Speech Research">
+  <link rel="shortcut icon" href="favicon.png" type="image/x-icon" />
+  <title>MDDM: A Multi-view Discriminative Enhanced Diffusion-based Model for Speech Enhancement</title>
+</head>
+
+<body rightmargin="150" leftmargin="150" topmargin="100" bottommargin="100" line-height:160%>
+  <font size="5">
+
+    <div class="container">
+
+      <header role="banner">
+
+      </header>
+      <main role="main">
+        <article itemscope itemtype="https://schema.org/BlogPosting">
+          <br></br>
+          <h1 itemprop="headline" align="center">
+            <font color="000093" size="7">MDDM: A Multi-view Discriminative Enhanced Diffusion-based Model for Speech Enhancement</br>
+            </font>
+          </h1>
+          <br></br>
+          <p style="line-height:1" align="center"><b>
+              <font color="061E61">Nan Xu<sup>*1</sup>, Zhaolong Huang<sup>1</sup>, Xiaonan Zhi<sup>1</sup>, Hao Liu<sup>1</sup></font>
+            </b></p>
+          <p style="line-height:0.6" align="center">
+            <font color="061E61"><sup>1</sup>Alibaba Digital Media Entertainment Group, Beijing, China</font>
+          </p>
+          <p style="line-height:1" align="center">
+            <font color="061E61"><sup>*</sup>Corresponding author</font>
+          </p>
+          <section itemprop="entry-text">
+            <br>
+            <h2 id="abstract">
+              <font color="000093">Abstract</font>
+            </h2>
+            <p style="text-align: justify;">
+              <font color="061E61"> With the development of deep learning, speech enhancement has been greatly optimized in terms of speech perception and intelligibility. 
+                Previous approaches typically focus on the discriminative supervised learning or generative modeling, which tends to introduce speech distortions or high 
+                computational cost. In this paper, we propose {\bf MDDM}, a {\bf M}ulti-view {\bf D}iscriminative enhanced {\bf D}iffusion-based {\bf M}odel. Specifically, 
+                we take the features of three domains (time, frequency and noise) as inputs of a discriminative prediction network, generating the preliminary spectrogram result. 
+                Then, the discriminative output can be converted to clean speech by several inference sampling steps. Due to the intersection of the distributions between discriminative 
+                output and clean target, the smaller sampling steps can achieve the competitive performance compared to other diffusion-based methods, thereby mitigating the 
+                computational cost. Experiments conducted on a public dataset and a real-world dataset validate the effectiveness of the proposed method, either on subjective or 
+                objective metric.
+             </font>
+            </p>
+
+            <br></br>
+            <figure>
+              <p align="center"><img src="f11.png" width="90%" class="center" /></p>
+              <figcaption>
+                <p style="text-align: justify;">
+                  <font color="061E61"><b>Figure 1:</b> The overall architecture of MDDM, multi-view discriminative network and encoder layer. In subfigure (a), $ S_n $ and $ T_n $ 
+                    are noisy signals in frequency and time domains, respectively. Two D-* are encoder and decoder of discriminative network and output spectrogram is $ S_p $.  
+                    $ S_t $ is the sampled spectrogram at time-step $ t $. The intermediate multi-view feature $ C_m $ and output $ S_p $ are the conditions of diffusion model. 
+                    In subfigure (b), S-* and T-* means frequency and time domains, respectively. NPM is the noise perception module and $ \oslash $ means the modulation mode. 
+                    Note that the skip connections are not drawn. In subfigure (c), the encoder module is shown. 
+                    GELU is Gaussian Error Linear Unit and GN denotes GroupNorm. The dilation rates are 1 and 2, respectively.
+                </p>
+              </figcaption>
+            </figure>
+            
+
+
+            <br></br>
+            <h2 id="Demos">
+              <font color="000093">Demos</font>
+            </h2>
+
+            <p><b>
+                <font color="061E61">Real-world Samples:</font>
+              </b></p>
+
+            <table class="table" align="center" style="table-layout: fixed;word-break:break-word">
+              <thead>
+                <tr>
+                  <td scope="col" width="33%">
+                    <font color="061E61">Mixture</font>
+                  </td>
+                  <td scope="col" width="33%">
+                    <font color="061E61">MDDM</font>
+                  </td>
+                  <td scope="col" width="33%">
+                    <font color="061E61">StoRM</font>
+                  </td>
+                  <td scope="col" width="33%">
+                    <font color="061E61">SGMSE+</font>
+                  </td>
+                  <td scope="col" width="33%">
+                    <font color="061E61">MDM</font>
+                  </td>
+                  <td scope="col" width="33%">
+                    <font color="061E61">HDemucs</font>
+                  </td>
+                  <td scope="col" width="33%">
+                    <font color="061E61">BSRNN</font>
+                  </td>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td scope="row"><audio controls="controls">
+                      <source src="samples/1_text2audio/2_humantextprompt/A man is speaking under the water.wav"
+                        autoplay />Your browser does not support the audio element.
+                    </audio></td>
+                  <td><audio controls="controls">
+                      <source
+                        src="samples/1_text2audio/2_humantextprompt/Two space shuttles are fighting in the space.wav"
+                        autoplay />Your browser does not support the audio element.
+                    </audio></td>
+                  <td><audio controls="controls">
+                      <source src="samples/1_text2audio/2_humantextprompt/The sound of a steam engine.wav" autoplay />
+                      Your browser does not support the audio element.
+                    </audio></td>
+
+                </tr>
+              </tbody>
+            </table>
+
+            <p><b>
+                <font color="061E61">Long Samples:</font>
+              </b></p>
+
+            
+          </section>
+        </article>
+      </main>
+
+    </div>
+
+    <script>
+      (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+          (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date(); a = s.createElement(o),
+          m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+      })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+      ga('create', 'UA-139981676-1', 'auto');
+      ga('send', 'pageview');
+    </script>
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+
+
+
+    <script type="text/x-mathjax-config">
+     MathJax.Hub.Config({
+         HTML: ["input/TeX","output/HTML-CSS"],
+         TeX: {
+                Macros: {
+                         bm: ["\\boldsymbol{#1}", 1],
+                         argmax: ["\\mathop{\\rm arg\\,max}\\limits"],
+                         argmin: ["\\mathop{\\rm arg\\,min}\\limits"]},
+                extensions: ["AMSmath.js","AMSsymbols.js"],
+                equationNumbers: { autoNumber: "AMS" } },
+         extensions: ["tex2jax.js"],
+         jax: ["input/TeX","output/HTML-CSS"],
+         tex2jax: { inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+                    displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+                    processEscapes: true },
+         "HTML-CSS": { availableFonts: ["TeX"],
+                       linebreaks: { automatic: true } }
+     });
+ </script>
+
+    <script type="text/x-mathjax-config">
+     MathJax.Hub.Config({
+       tex2jax: {
+         skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+       }
+     });
+ </script>
+
+    <script type="text/javascript" async
+      src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML">
+      </script>
+
+
+
+
+</body>
+
+</html>
