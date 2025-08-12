@@ -1,0 +1,116 @@
+max_epoch: 140
+save_interval: 500  # save_interval * accum_grad batch
+log_interval: 100
+#init_method: '.ddp_init'
+grad_clip: 10000000
+accum_grad: 4  #1
+
+model_dir: 'output_model'
+#pretrain: 'step_65000.pt'
+
+model:
+    type: 'model-se'
+    nnet: 'h-unet'
+    mask: 'irm'
+    test: True
+    conf:
+        channels: 32 
+        growth: 2
+        nfft: 4096
+        wiener_iters: 0
+        end_iters: 0
+        wiener_residual: false
+        cac: True
+        # Main structure
+        depth: 6
+        rewrite: True
+        hybrid: True
+        hybrid_old: False
+        # Frequency Branch
+        multi_freqs: []
+        multi_freqs_depth: 3
+        freq_emb: 0.2
+        emb_scale: 10
+        emb_smooth: True
+        # Convolutions
+        kernel_size: 8
+        stride: 4
+        time_stride: 2
+        context: 1
+        context_enc: 0
+        # normalization
+        norm_starts: 4
+        norm_groups: 4
+        # DConv residual branch
+        dconv_mode: 1
+        dconv_depth: 2
+        dconv_comp: 4
+        dconv_attn: 4
+        dconv_lstm: 4
+        dconv_init: 0.001
+        # Weight init
+        rescale: 0.1
+        use_ntoken: True
+
+loss:
+    type: 'l12'
+    stft_loss: False
+    delta_loss: False
+    k: 3
+    alpha: 100.0
+    beta: 1.0
+    gamma: 0.001
+
+dataset: se
+dataset_conf:
+    resample_conf:
+        resample_rate: 48000
+    filter_conf:
+        max_length: 7.2
+        min_length: 0.8
+        frame_length: 4096
+        frame_shift: 1024
+    add_rir: True
+    rir_conf:
+        rir_list_file: 'data/noise_data/rir.lst'
+        prob: 0.2
+        zoom: True
+        min_ampl: 1500
+        max_ampl: 26000
+    add_noise: True
+    noise_conf:
+        noise_list_file: 'data/noise_data/noise_new.lst'
+        prob: 0.3
+        min_snr: 0
+        max_snr: 20
+        min_ampl: 1500
+        max_ampl: 26000
+        thre: 32768.0
+        step: 50
+        idx: 0
+    feats_type: 'none'
+    fft_conf:
+        frame_shift: 1024
+        frame_length: 4096
+        nfft: 4096
+    shuffle: True
+    shuffle_conf:
+        shuffle_size: 1500
+    sort: True
+    sort_conf:
+        sort_size: 500  # sort_size should be less than shuffle_size
+    batch_conf:
+        batch_type: 'static' # static or dynamic
+        batch_size: 12
+    padding: False
+
+optim: adam
+optim_conf:
+    lr: 0.0003
+    momentum: 0.9
+    beta2: 0.999
+    weight_decay: 0
+
+scheduler: None #warmuplr    # pytorch v1.1.0+ required
+#scheduler_conf:
+#    warmup_steps: 25000
